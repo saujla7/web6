@@ -1,0 +1,38 @@
+<div class="container" style="padding-top:60px">
+    <div class="row">
+
+        <div class="col-md-12">
+            <h2>Categories <a href="/categories/add" class="btn btn-success pull-right">Add Category</a></h2>
+            <hr />
+
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Categories ID</th>
+                        <th scope="col">Categories Name</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each categories}}
+                    <tr>
+                        <td scope="row">
+                            <a href="/posts?category={{id}}">{{id}}</a>
+                        </td>
+                        <td><a href="/posts?category={{id}}">{{category}}</a></td>
+                        <td><a href="/categories/delete/{{id}}" class="btn btn-danger">Delete Category</a></td>
+                    </tr>
+                    {{/each}}
+                    {{#unless categories}}
+                    <tr>
+                        <td colspan="5" class="col-md-12 text-center"> <strong>{{message}}</strong></td>
+                    </tr>
+                    {{/unless}}
+                </tbody>
+            </table>
+
+
+        </div>
+    </div>
+</div>
